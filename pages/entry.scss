@@ -32,19 +32,23 @@ body,
         display: block;
 
         .combo-box {
-            margin-top: 200px;
+            margin-top: 10%;
         }
 
         .explore {
             display: flex;
             flex-flow: row;
             width: 75%;
-            margin: 100px auto 20px;
+            margin: 50px auto 20px;
 
             .columns {
                 width: 33%;
                 display: flex;
                 flex-flow: column;
+
+                &:first-child {
+                    margin-left: 10%;
+                }
 
                 h3 {
                     color: #fff;
