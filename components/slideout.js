@@ -6,6 +6,51 @@ import './slideout.scss'
 const Slideout = () => {
     const initState = {
         open: null,
+        newTabs: [
+            {
+                name: 'topics you follow',
+                sections: [
+                    {
+                        title: 'new content',
+                        items: [
+                            { type: 'Topic', name: 'Agile@Scale', content: 'Lean Playbook I.PPTX' },
+                            { type: 'Topic', name: 'Agile@Scale', content: 'Lean Playbook II.PPTX' },
+                        ],
+                    },
+                    {
+                        title: 'new discussions',
+                        items: [
+                            {
+                                type: 'Topic',
+                                name: 'Agile@Scale',
+                                content: 'What are the best frameworks for sizing and prioritizing?',
+                            },
+                            {
+                                type: 'Topic',
+                                name: 'Agile@Scale',
+                                content: 'What are the best frameworks for sizing and prioritizing?',
+                            },
+                        ],
+                    },
+                    {
+                        title: 'new questions',
+                        items: [
+                            {
+                                type: 'PA',
+                                name: 'TMT',
+                                content: 'Does anyone have a vignette for Ad Inventory Optimization in the EU?',
+                            },
+                            {
+                                type: 'PA',
+                                name: 'TMT',
+                                content: 'Does anyone have a vignette for Ad Inventory Optimization in the EU?',
+                            },
+                        ],
+                    },
+                ],
+            },
+            { name: 'recent activity', sections: [] },
+        ],
         tabs: [
             {
                 name: 'topics you follow',
@@ -111,30 +156,38 @@ const Slideout = () => {
 
     return (
         <div className="slideout-wrapper" ref={curTab}>
-            {state.tabs.map((t, i) => (
+            {state.newTabs.map((t, i) => (
                 <div
                     className={`tabs tab-${i} ${state.open === i ? 'open' : ''}`}
                     key={`tab-${i}`}
                     onClick={() => {
-                        if (state.tabs[i].items.length > 0) {
+                        if (state.newTabs[i].sections.length > 0) {
                             setState({ ...state, open: i })
                             document.addEventListener('mousedown', handleClick, false)
                         }
                     }}
                 >
-                    <h3>{t.name}</h3>
-                    <ul>
-                        {t.items.map((item, j) => (
-                            <li key={`tab-${i}-${j}`}>
-                                <div className="topic">
-                                    {item.type}:{item.name}
-                                </div>
-                                <div className="content">
-                                    <span className="bold">{item.content.type}</span>:{item.content.title}
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
+                    <h3 className="tab-title">{t.name}</h3>
+
+                    {t.sections.map((s, j) => {
+                        return (
+                            <div key={`tab-${i}-${j}`}>
+                                <h4>{s.title}</h4>
+                                <ul>
+                                    {s.items.map((item, w) => {
+                                        return (
+                                            <li key={`tab-${i}-${j}-${w}`}>
+                                                <div className="topic">
+                                                    {item.type}:{item.name}
+                                                </div>
+                                                <div className="content">{item.content}</div>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                        )
+                    })}
                 </div>
             ))}
         </div>
