@@ -1,14 +1,13 @@
 html,
 body,
 #__next {
-    overflow-y: auto;
     margin: 0;
     padding: 0;
 }
 
 .level-four {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     overflow-y: auto;
 
     header {
