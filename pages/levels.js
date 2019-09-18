@@ -27,7 +27,7 @@ const SEntry = () => {
     return (
         <div className="level-four">
             <Head>
-                <title>Search Entry</title>
+                <title>Topic Pages</title>
             </Head>
             <header>
                 <div className="leftside">
