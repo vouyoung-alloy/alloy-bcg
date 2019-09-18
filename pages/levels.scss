@@ -26,8 +26,9 @@ body,
 
         .rightside {
             background: url(../static/rightside.png) 0 0 no-repeat;
-            background-size: cover;
-            width: 426px;
+            //  background-size: cover;
+            width: 215px;
+            background-position-x: -213px;
         }
     }
 
