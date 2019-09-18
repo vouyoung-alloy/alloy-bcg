@@ -10,6 +10,10 @@ body,
     height: 100%;
     overflow-y: auto;
 
+    canvas{
+        visibility: hidden;
+    }
+
     header {
         position: relative;
         background: #333333;
@@ -18,6 +22,7 @@ body,
         height: 74px;
         width: 100%;
         justify-content: space-between;
+        z-index: 99;
 
         .leftside {
             width: 172px;
