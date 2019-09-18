@@ -1,0 +1,46 @@
+.combo-box {
+    display: flex;
+    justify-content: flex-start;
+    height: 56px;
+    width: 650px;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.5px solid #979797;
+    border-radius: 7px;
+
+
+    textarea,
+    select,
+    input,
+    button {
+        outline: none;
+    }
+
+    .input_wrapper {
+
+        display: flex;
+        align-items: center;
+
+        svg {
+            color: #333333;
+            font-size: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        input {
+            border: 0;
+            font-size: 20px;
+            line-height: 44px;
+            padding: 4px 10px 4px 12px;
+
+            width: 382px;
+
+            &::placeholder {
+                color: #B7B7B7;
+            }
+        }
+    }
+
+
+}

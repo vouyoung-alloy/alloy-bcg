@@ -1,0 +1,31 @@
+:global(body) {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
+}
+
+nav {
+    text-align: center;
+
+    ul {
+        padding: 4px 0;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+
+        li {
+            color: #fff;
+            background: #787873;
+            width: 20%;
+            line-height: 75px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-right: 30px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+
+        }
+    }
+}

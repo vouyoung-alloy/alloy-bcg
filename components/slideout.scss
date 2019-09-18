@@ -1,0 +1,119 @@
+@mixin position {
+    $elements: 2;
+
+    @for $i from 0 to $elements {
+        &:nth-child(#{$i + 1}) {
+            right: -455px + ($elements - $i)*50px;
+        }
+    }
+}
+
+
+.slideout-wrapper {
+    position: absolute;
+    right: 0;
+    top: 80px;
+    height: 100%;
+    min-width: 60px;
+
+    .tabs {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        min-width: 60px;
+        height: calc(100% - 80px);
+        border-radius: 16px 0 0 16px;
+        background-color: #32C77F;
+        box-shadow: -5px 2px 16px 0 rgba(0, 0, 0, 0.22);
+        width: 455px;
+
+        @include position;
+        transition: right 1s ease, opacity 0.5s ease 0.5s;
+
+        h3 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin: 10px 22px;
+            transform: rotate(-90deg);
+            transform-origin: left top 0;
+            display: block;
+            width: 200px;
+            position: absolute;
+            bottom: 0;
+
+        }
+
+        ul {
+            display: none;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            margin: 0 30px;
+            overflow-y: scroll;
+            height: calc(100% - 98px);
+        }
+
+        li {
+            border: 0.8px solid #B7B7B7;
+            border-radius: 5.6px;
+            min-height: 95px;
+            color: #333333;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+
+            div {
+                margin: 16.4px 16.4px 0;
+            }
+
+            .topic {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .content {
+                font-size: 16px;
+
+                .bold {
+                    font-weight: bold;
+                }
+            }
+
+
+        }
+
+        &.open {
+
+            background-color: #fff;
+            width: 455px;
+            right: 0;
+            z-index: 999;
+            cursor: default;
+
+            h3 {
+                color: #000;
+                margin-left: 30px;
+                font-size: 20px;
+                font-weight: bold;
+                width: 100%;
+                margin-bottom: 32px;
+                margin-top: 27px;
+                position: relative;
+                transform: initial;
+            }
+
+            ul {
+                display: block;
+            }
+        }
+
+    }
+}
