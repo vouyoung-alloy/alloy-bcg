@@ -91,7 +91,6 @@ const Slideout = () => {
                     },
                 ],
             },
-            { name: 'recent activity', items: [] },
         ],
         //need to update $elements in slideout.scss
     }

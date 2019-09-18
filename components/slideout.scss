@@ -1,5 +1,5 @@
 @mixin position {
-    $elements: 2;
+    $elements: 1;
 
     @for $i from 0 to $elements {
         &:nth-child(#{$i + 1}) {

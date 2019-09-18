@@ -16,8 +16,10 @@ const Dropdown = ({ label, name, options, placeholder, layout, setOptions }) => 
     const curDrop = useRef(null)
 
     const toggleList = () => {
-        if (!state.open) document.addEventListener('mousedown', handleClick, false)
-        setState({ ...state, open: !state.open })
+        if (options.length > 0) {
+            if (!state.open) document.addEventListener('mousedown', handleClick, false)
+            setState({ ...state, open: !state.open })
+        }
     }
 
     const handleClick = e => {

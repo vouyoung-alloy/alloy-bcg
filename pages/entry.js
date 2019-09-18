@@ -8,14 +8,21 @@ import './entry.scss'
 const SEntry = () => {
     const initState = {
         modes: [
-            { name: 'explore', links: ['PA & Topics', 'Primers', 'LABs', 'BCG Publications', 'Training'] },
+            { name: 'explore', links: ['PA & Topics', 'Research Center', 'LAB', 'BCG Publications', 'BCG Products'] },
             {
                 name: 'find',
-                links: ['Cases', 'Proposals', 'Credentials', 'Research Materials', 'Proprietary Methods & Tools'],
+                links: [
+                    'Case Materials',
+                    'Selling Materials',
+                    'Credentials',
+                    'Research Materials',
+                    'Proprietary Methods & Tools',
+                    'General Practice Materials',
+                ],
             },
             {
-                name: 'assist',
-                links: ['People Finder', 'BCG Experts / CCO', 'Expert Networks', 'Communities', 'KT/DRS Assistance'],
+                name: 'connect',
+                links: ['People Finder', 'Expert Networks', 'Communities', 'KT/DRS Assistance', 'Analytics'],
             },
         ],
     }
