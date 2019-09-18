@@ -14,7 +14,6 @@ const SEntry = () => {
                 links: [
                     'Case Materials',
                     'Selling Materials',
-                    'Credentials',
                     'Research Materials',
                     'Proprietary Methods & Tools',
                     'General Practice Materials',
