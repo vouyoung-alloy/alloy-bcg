@@ -32,10 +32,9 @@ const SEntry = () => {
                 NextGen Knowledge Navigator
                 <Account />
             </header>
+
             <section>
                 <Combobox />
-            </section>
-            <section>
                 <div className="explore">
                     {state.modes.map(m => (
                         <div className="columns" key={m.name}>
