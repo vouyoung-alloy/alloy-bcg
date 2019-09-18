@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useReducer } from 'react'
 import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md'
 import './dropdown.scss'
 
-const Dropdown = ({ label, name, options, placeholder, layout }) => {
+const Dropdown = ({ label, name, options, placeholder, layout, setOptions }) => {
     const initState = {
         displayText: placeholder,
         selected: null,
@@ -42,7 +42,14 @@ const Dropdown = ({ label, name, options, placeholder, layout }) => {
                 <ul className="dropdown-list">
                     {options.map((opt, i) => {
                         return (
-                            <li className="dropdown-list-item" key={`${opt}-${i}`} onClick={() => selectItem(opt)}>
+                            <li
+                                className="dropdown-list-item"
+                                key={`${opt}-${i}`}
+                                onClick={() => {
+                                    selectItem(opt)
+                                    setOptions(i)
+                                }}
+                            >
                                 {opt}
                             </li>
                         )
