@@ -91,6 +91,7 @@ const Slideout = () => {
                     },
                 ],
             },
+            { name: 'recent activity', items: [] },
         ],
         //need to update $elements in slideout.scss
     }
@@ -115,8 +116,10 @@ const Slideout = () => {
                     className={`tabs tab-${i} ${state.open === i ? 'open' : ''}`}
                     key={`tab-${i}`}
                     onClick={() => {
-                        setState({ ...state, open: i })
-                        document.addEventListener('mousedown', handleClick, false)
+                        if (state.tabs[i].items.length > 0) {
+                            setState({ ...state, open: i })
+                            document.addEventListener('mousedown', handleClick, false)
+                        }
                     }}
                 >
                     <h3>{t.name}</h3>
