@@ -11,12 +11,33 @@ body,
     min-height: 100%;
     overflow-y: auto;
 
+    header {
+        position: relative;
+        background: #333333;
+        display: flex;
+        flex-direction: row;
+        height: 74px;
+        width: 100%;
+        justify-content: space-between;
+
+        .leftside {
+            width: 172px;
+            border-right: 2px solid #262626;
+        }
+
+        .rightside {
+            background: url(../static/rightside.png) 0 0 no-repeat;
+            background-size: cover;
+            width: 426px;
+        }
+    }
+
     .dropdown-wrapper {
-        position: absolute;
+
         top: 0px;
         left: 0;
         width: 100%;
-        height: 56px;
+        height: 74px;
 
         // width: 154px;
         // height: 65px;
@@ -35,7 +56,6 @@ body,
 
     img {
         width: 100%;
-        margin-top: 56px;
         padding-bottom: 20px;
     }
 

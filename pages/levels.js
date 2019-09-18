@@ -29,7 +29,13 @@ const SEntry = () => {
             <Head>
                 <title>Search Entry</title>
             </Head>
-            <Dropdown {...state.select} setOptions={setOptions} />
+            <header>
+                <div className="leftside">
+                    <Dropdown {...state.select} setOptions={setOptions} />
+                </div>
+                <div className="rightside"></div>
+            </header>
+
             <img src={state.images[state.currentImage]} />
         </div>
     )
